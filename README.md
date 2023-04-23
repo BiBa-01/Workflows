@@ -1,2 +1,2 @@
-# Workfolows
+# Workflows
 Workflows with GitHub Actions
