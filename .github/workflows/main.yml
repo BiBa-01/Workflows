@@ -10,12 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v2
-    
-    - name: run make command
+    - name: Set up Python 3.5
+      uses: actions/setup-python@v1
+      with: 
+         python-version: 3.5
+    - name: install dependencies
       run: 
-      using: 'node16'
-      main: 'main.js'
-      make hello
+         make install
+    - name: Lint with pylint
+      run: |
+         make lint
+    - name: Test with pytest
+      run: |
+         make test
+  
  
       
     
